@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>NASA</title>
+</head>
+<body>
+
+    <header class="container-fluid">
+        <h1>NASA MARS ROVERS</h1>
+        <div class="toggle-container">
+            <label class="switchBtn" >
+                <input type="checkbox" id="switchBtn">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Choose your space name</h2>
+        <form action="" id="space-name">
+            <label for="aliasName">Space Name (must be 3 characters)</label>
+            <input class="text-input" id="aliasName" type="text" placeholder="Alias...">
+            <input id="send-btn" type="text" placeholder="Show my name"  disabled>
+        </form>
+        <p id="resultElement"></p>
+    </div>
+
+    <div class="container-fluid nasa-content">
+        <div class="text-container">
+            <h2 id="heading">Welcome [Namn från fält]!</h2>
+        </div>
+        <section class="cards" id="mars">
+            <!-- <article class="card">
+                <h3>Oppurtunity</h3>
+                <div class="mars-img" >
+                    <img src="#" alt="">
+                </div>
+                <h4 class="center">Dagens datum</h4>
+            </article> -->
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

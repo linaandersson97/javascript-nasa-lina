@@ -1,0 +1,209 @@
+@import 'sass/variables';
+@import 'sass/typography';
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+.container-fluid{
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    margin-bottom: 3rem;
+}
+header{
+    justify-content: space-between;
+    padding: 1rem;
+    
+    .toggle-container{
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        .switchBtn {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        
+            /* Gömmer default HTML checkbox */
+            input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+        
+                &:checked {
+        
+                    //När den är i kryssad 
+                    + {
+                        .slider {
+                            //Gör detta med slider som är Lila bg 
+                            background-color: $darkmode-text;
+        
+                            &:before {
+                                //Påverkar cirkeln
+                                transform: translateX(23px); //hur långt cirkel förflyttar sig
+                                background-color: $darkmode-dark;
+                            }
+                        }
+                    }
+                }
+        
+                &:focus {
+        
+                    //När den är markerad klickad på
+                    + {
+                        .slider {
+                            //Väljer alla .slider som är placerade direkt efter input
+                            //Skugga när man klickar
+                            box-shadow: 0 0 2px $darkmode-dark;
+                        }
+                    }
+                }
+            }
+        
+            /* slider */
+            .slider {
+                //Lila BG 
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $darkmode-dark;
+                border-radius: 34px;
+                transition: .4s;
+        
+                &:before {
+                    //Cirkeln i slider
+                    position: absolute;
+                    content: "";
+                    height: 20px;
+                    width: 20px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: $darkmode-text;
+                    border-radius: 50%;
+                    transition: .4s;
+                }
+            }
+        }
+    }
+}
+.nasa-content{
+    flex-wrap: wrap;
+    margin-top: 6rem;
+    .text-container{
+        flex: 0 0 100%;
+    }
+    .cards{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex: 1;
+        gap: 1rem;
+        .card{
+            flex: 1;
+            border: 1px solid $border-color;
+            padding: 1rem;
+            
+            .mars-img{
+                flex: 0 0 100%;
+                margin: 1rem 0;
+            }
+        }
+        
+    }
+}
+.container {
+    margin-top: 5rem;
+    max-width: 900px;
+    margin: auto;
+    background-color: $bg-color;
+    padding: 2rem;
+    @media (min-width: 800px){
+        padding: 4rem;
+        border-radius: 10px;
+
+    }
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    gap: 1rem;
+    label{
+        padding: 1rem;
+        text-align: center;
+        font-size: $font-size-s;
+        font-weight: 400;
+    }
+    input{
+        display: block;
+        width: 100%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.3rem;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        border: none;
+        transition: 0.5s;
+        border-radius: 10px;
+        &::placeholder{
+            color:rgb(0, 0, 0);
+        }
+        // Style på knappen
+        &[type="submit"]{
+            border: none;
+            background-color: $bg-color-blue;
+            color:$darkmode-text;
+        }
+        // Stylar när knappen är disabled
+        &:disabled{
+            background-color: $bg-color-disable;
+            color:rgb(177, 177, 177);
+            cursor: not-allowed;
+        }
+        &.focusBorder{
+            //För att ta bort default focus
+            outline: none;
+            border-bottom: 4px solid $border-color;
+        }
+    }
+    
+   
+}
+#send-btn{
+    flex: 0 0 100%;
+    text-align: center;
+    @media (min-width: 800px){
+        flex: 0 0 25%;
+
+    }
+}
+
+
+.dark {
+    background-color: $darkmode-dark;
+    color: $darkmode-text;
+
+    a {
+        color: $darkmode-text;
+    }
+    .container{
+        background-color: $darkmode-section;
+    }
+}
+

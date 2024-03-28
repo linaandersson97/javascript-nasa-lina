@@ -1,0 +1,209 @@
+@charset "UTF-8";
+h1, h2 {
+  font-family: "Kode Mono", monospace;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2rem;
+}
+h3.center {
+  text-align: center;
+}
+
+p {
+  font-size: 2rem;
+}
+
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #d5d4f3;
+  color: rgb(22, 22, 22);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.container-fluid {
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+header {
+  justify-content: space-between;
+  padding: 1rem;
+}
+header .toggle-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+header .toggle-container .switchBtn {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  /* Gömmer default HTML checkbox */
+  /* slider */
+}
+header .toggle-container .switchBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .toggle-container .switchBtn input:checked + .slider {
+  background-color: white;
+}
+header .toggle-container .switchBtn input:checked + .slider:before {
+  transform: translateX(23px);
+  background-color: #12122b;
+}
+header .toggle-container .switchBtn input:focus + .slider {
+  box-shadow: 0 0 2px #12122b;
+}
+header .toggle-container .switchBtn .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #12122b;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+header .toggle-container .switchBtn .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.nasa-content {
+  flex-wrap: wrap;
+  margin-top: 6rem;
+}
+.nasa-content .text-container {
+  flex: 0 0 100%;
+}
+.nasa-content .cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 1rem;
+}
+.nasa-content .cards .card {
+  flex: 1;
+  border: 1px solid white;
+  padding: 1rem;
+}
+.nasa-content .cards .card .mars-img {
+  flex: 0 0 100%;
+  margin: 1rem 0;
+}
+
+.container {
+  margin-top: 5rem;
+  max-width: 900px;
+  margin: auto;
+  background-color: #d5d4f3;
+  padding: 2rem;
+}
+@media (min-width: 800px) {
+  .container {
+    padding: 4rem;
+    border-radius: 10px;
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  gap: 1rem;
+}
+form label {
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+form input {
+  display: block;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.3rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+form input::-moz-placeholder {
+  color: rgb(0, 0, 0);
+}
+form input::placeholder {
+  color: rgb(0, 0, 0);
+}
+form input[type=submit] {
+  border: none;
+  background-color: #242348;
+  color: white;
+}
+form input:disabled {
+  background-color: grey;
+  color: rgb(177, 177, 177);
+  cursor: not-allowed;
+}
+form input.focusBorder {
+  outline: none;
+  border-bottom: 4px solid white;
+}
+
+#send-btn {
+  flex: 0 0 100%;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  #send-btn {
+    flex: 0 0 25%;
+  }
+}
+
+.dark {
+  background-color: #12122b;
+  color: white;
+}
+.dark a {
+  color: white;
+}
+.dark .container {
+  background-color: #242348;
+}/*# sourceMappingURL=style.css.map */

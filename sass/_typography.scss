@@ -1,0 +1,23 @@
+h1,h2{
+    font-family: "Kode Mono", monospace;
+    font-weight: 400;
+}
+h1{
+    font-size: $font-size-L;
+}
+h2{
+    font-size: $font-size-m;
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+h3{
+    font-size: $font-size-s;
+    &.center{
+        text-align: center;
+    }
+}
+p {
+    font-size: $font-size-s;
+    
+}
